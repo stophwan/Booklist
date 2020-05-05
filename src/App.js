@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Grid from '@material-ui/core/Grid';
+import TopNav from './components/TopNav'
+import BookList from './components/BookList'
+import BookDeatail from './components/BookDetail'
+import Container from '@material-ui/core/Container';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TopNav/>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
+            <BookList />
+          </Grid>
+          <Grid item xs={8}>
+            <BookDeatail />
+          </Grid>
+        </Grid>
+
+      </Container>
     </div>
   );
 }
